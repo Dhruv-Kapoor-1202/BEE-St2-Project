@@ -1,10 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import cors from "cors";
+import cors from "cors";  // *enables your express application access control to allow restricted resources from being accessed from external domains 
 import dotenv from "dotenv";
-import multer from "multer";
-import helmet from "helmet";
+import multer from "multer";  //  *middleware for handling multipart/form-data , which is primarily used for uploading files
+import helmet from "helmet";  //  *secures your express app by setting response HTTP headers appropriately
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
