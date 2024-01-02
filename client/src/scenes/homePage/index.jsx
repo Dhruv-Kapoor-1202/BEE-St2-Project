@@ -1,6 +1,12 @@
+import Navbar from "../navbar/index.jsx";
+
+import { Box } from "@mui/material"
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <Box>
+      <Navbar />
+    </Box>
   )
 };
 
