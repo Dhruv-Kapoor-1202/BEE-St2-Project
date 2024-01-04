@@ -27,34 +27,36 @@ const Friend = ({ friendId, name, subtitle, userPathPicture }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="flex justify-between items-center gap-4 ">
+      <div className="flex justify-start items-center gap-4">
         <UserImage image={userPathPicture} size="55px" />
         <div
           onClick={() => {
             navigate(`/profile/${friendId}`);
             navigate(0);
           }}
+          className="flex flex-col gap-0"
         >
-          <p>
+          <p className="font-bold">
             {name}
           </p>
-          <p>
+          <p className="text-sm">
             {subtitle}
           </p>
         </div>
-        <button
-          type="submit"
-          className="btn"
-          onClick={() => patchFriend()}
-        >
-          {isFriend ? (
-            <PersonRemoveOutlined />
-          ) : (
-            <PersonAddOutlined />
-          )}
-        </button>
       </div>
+
+      <button
+        type="submit"
+        className="btn rounded-[50%] h-fit w-fit hover:bg-inherit"
+        onClick={() => patchFriend()}
+      >
+        {isFriend ? (
+          <PersonRemoveOutlined sx={{ fontSize: "1.25rem", p: 0 }} />
+        ) : (
+          <PersonAddOutlined sx={{ fontSize: "1.25rem" }} />
+        )}
+      </button>
     </div>
   );
 };

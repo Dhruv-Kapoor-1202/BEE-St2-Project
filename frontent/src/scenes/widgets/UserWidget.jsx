@@ -47,19 +47,20 @@ const UserWidget = ({ userId, picturePath }) => {
   } = user;
 
   return (
-    <div>
+    <div className="bg-pink-50 rounded-[33px] p-4 pb-6 flex flex-col shadow-lg gap-2">
       {/* First Row */}
       <div
         onClick={() => navigate(`/profile/${userId}`)}
+        className="flex justify-between items-center cursor-pointer gap-2"
       >
-        <div>
+        <div className="flex justify-between items-center gap-4 ">
           <UserImage image={picturePath} />
-          <div>
-            <p>
+          <div className="flex flex-col justify-center items-start">
+            <p className="text-xl font-bold">
               {firstName} {lastName}
             </p>
             <p>
-              {friends.length} friends
+              {friends.length} {friends.length === 1 ? "friend" : "friends"}
             </p>
           </div>
         </div>
@@ -67,64 +68,67 @@ const UserWidget = ({ userId, picturePath }) => {
       </div>
 
       {/* Divider */}
+      <div className="divider m-0"></div>
 
       {/* Second Row */}
       <div>
-        <div>
+        <div className="flex gap-4 justify-start items-center">
           <LocationOnOutlined fontSize="large" />
           <p>{location}</p>
         </div>
-        <div>
+        <div className="flex gap-4 justify-start items-center">
           <WorkOutlineOutlined fontSize="large" />
           <p>{occupation}</p>
         </div>
       </div>
 
       {/* Divider */}
+      <div className="divider m-0"></div>
 
       {/* Third Row */}
       <div>
-        <div>
+        <div className="flex justify-between items-baseline gap-2" >
           <p>Who's viewed your profile</p>
-          <p>{viewedProfile}</p>
+          <p className="font-bold">{viewedProfile}</p>
         </div>
-        <div>
+        <div className="flex justify-between items-baseline gap-2" >
           <p>Impressions of your post</p>
-          <p>{impressions}</p>
+          <p className="font-bold">{impressions}</p>
         </div>
       </div>
 
       {/* Divider */}
+      <div className="divider m-0"></div>
 
       {/* Fourth Row */}
-      <div>
-        <p>
+      <div className="flex flex-col gap-2">
+        <p className="font-bold text-lg">
           Social Profiles
         </p>
 
-        <div>
-          <div>
+        <div className="flex justify-between items-center">
+          <div className="flex justify-start gap-4">
             <img src="../assets/twitter.png" alt="twitter" />
-            <div>
-              <p>Twitter</p>
-              <p>Social Network</p>
+            <div className="flex flex-col items-start justify-center">
+              <p className="font-semibold text-md">Twitter</p>
+              <p className="text-sm">Social Network</p>
             </div>
           </div>
           <EditOutlined />
         </div>
 
-        <div>
-          <div>
+        <div className="flex justify-between items-center">
+          <div className="flex justify-start gap-4">
             <img src="../assets/linkedin.png" alt="linkedin" />
-            <div>
-              <p>LinkedIn</p>
-              <p>Network Platform</p>
+            <div className="flex flex-col items-start justify-center">
+              <p className="font-semibold text-md">LinkedIn</p>
+              <p className="text-sm">Network Platform</p>
             </div>
           </div>
           <EditOutlined />
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

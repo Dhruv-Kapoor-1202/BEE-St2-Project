@@ -26,8 +26,8 @@ const FriendListWidget = ({ userId }) => {
   }, []);
 
   return (
-    <div>
-      <p>
+    <div className="flex flex-col gap-4 p-4 bg-pink-50 rounded-[33px] shadow-lg">
+      <p className="font-bold text-lg">
         Friend List
       </p>
       <div>

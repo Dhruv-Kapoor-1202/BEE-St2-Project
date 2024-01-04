@@ -1,7 +1,7 @@
 
 const UserImage = ({ image, size = "60px" }) => {
   return (
-    <div style={{ width: { size }, height: { size } }} width={size} height={size}>
+    <div style={{ width: { size }, height: { size } }} width={size} height={size} >
       <img
         style={{ objectFit: 'cover', borderRadius: "50%" }}
         width={size}

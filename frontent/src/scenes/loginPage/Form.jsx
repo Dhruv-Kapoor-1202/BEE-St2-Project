@@ -112,7 +112,7 @@ const Form = () => {
         setFieldValue,
         resetForm,
       }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='flex flex-col p-4 bg-pink-50 rounded-[33px]'>
           <div>
             {
               isRegister && (

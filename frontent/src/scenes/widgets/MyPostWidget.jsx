@@ -49,13 +49,13 @@ const MyPostWidget = ({ picturePath }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-col bg-pink-50 p-4 rounded-[33px] shadow-lg gap-4">
+      <div className="flex gap-4 w-full justify-start items-center">
         <UserImage image={picturePath} />
         <input
           type="text"
           placeholder="What's on your mind..."
-          className="input input-bordered input-lg w-full max-w-xs"
+          className="input input-bordered input-md w-full rounded-[33px] bg-inherit"
           onChange={(e) => setPost(e.target.value)}
           value={post}
         />
@@ -98,10 +98,12 @@ const MyPostWidget = ({ picturePath }) => {
       )}
 
       {/* Divider */}
+      <div className="divider m-0"></div>
 
-      <div>
+      <div className="flex justify-between items-center">
         <div
           onClick={() => setIsImage(!isImage)}
+          className="flex justify-center items-start gap-2 cursor-pointer"
         >
           <ImageOutlined />
           <p>
@@ -111,11 +113,8 @@ const MyPostWidget = ({ picturePath }) => {
 
         {/* Is Non Moblie Screens */}
 
-
-
-
         <button
-          className="btn btn-wide"
+          className="btn rounded-[33px] text-white"
           onClick={handlePost}
           disabled={!post}
         >

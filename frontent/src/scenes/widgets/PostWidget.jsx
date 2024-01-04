@@ -42,7 +42,7 @@ const PostWidget = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col bg-pink-50 p-4 rounded-[33px] shadow-lg gap-2">
       <Friend
         friendId={postUserId}
         name={name}
@@ -61,12 +61,12 @@ const PostWidget = ({
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
-      <div>
-        <div>
-          <div>
+      <div className="flex justify-between items-center gap-4">
+        <div className="flex justify-start items-center gap-6">
+          <div className="flex justify-start items-center gap-1">
             <button
               type="submit"
-              className="btn"
+              className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"
               onClick={patchLike}
             >
               {isLiked ? (
@@ -78,10 +78,10 @@ const PostWidget = ({
             <p>{likeCount}</p>
           </div>
 
-          <div>
+          <div className="flex justify-start items-center gap-1">
             <button
               type="submit"
-              className="btn"
+              className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"
               onClick={() => setIsComments(!isComments)}
             >
               <ChatBubbleOutlineOutlined />
@@ -92,7 +92,7 @@ const PostWidget = ({
 
         <button
           type="submit"
-          className="btn"
+          className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"
         >
           <ShareOutlined />
         </button>
@@ -103,12 +103,14 @@ const PostWidget = ({
           {comments.map((comment, i) => (
             <div key={`${name}-${i}`}>
               {/* Divider */}
+              <div className="divider m-0"></div>
               <p>
                 {comment}
               </p>
             </div>
           ))}
           {/* Divider */}
+          <div className="divider m-0"></div>
         </div>
       )}
     </div>
