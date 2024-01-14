@@ -113,15 +113,22 @@ const Form = () => {
         setFieldValue,
         resetForm,
       }) => (
-        <form onSubmit={handleSubmit} className=''>
-          <div className=''>
+        <form onSubmit={handleSubmit} className='bg-base-200  flex flex-col justify-center items-center w-fit gap-4 lg:gap-6 rounded-3xl py-6 px-4 md:py-8 md:px-6 lg:p-8 shadow-md'>
+          <div
+            className='font-extrabold text-4xl lg:text-5xl'
+          >
+            {
+              isLogin ? "Login" : "Sign Up"
+            }
+          </div>
+          <div className='flex flex-col justify-center items-center w-full gap-2'>
             {
               isRegister && (
                 <>
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="input input-bordered w-full max-w-xs bg-inherit"
+                    className="input input-bordered w-full max-w-xs "
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.firstName}
@@ -130,7 +137,7 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="input input-bordered w-full max-w-xs bg-inherit"
+                    className="input input-bordered w-full max-w-xs "
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.lastName}
@@ -139,7 +146,7 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Location"
-                    className="input input-bordered w-full max-w-xs bg-inherit"
+                    className="input input-bordered w-full max-w-xs "
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.location}
@@ -148,13 +155,13 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Occupation"
-                    className="input input-bordered w-full max-w-xs bg-inherit"
+                    className="input input-bordered w-full max-w-xs "
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.occupation}
                     name='occupation'
                   />
-                  <div>
+                  <div className='w-full input input-bordered flex p-2 flex'>
                     <Dropzone
                       acceptedFiles=".jpg,.jpeg,.png"
                       multiple={false}
@@ -164,12 +171,13 @@ const Form = () => {
                       {({ getRootProps, getInputProps }) => (
                         <div
                           {...getRootProps()}
+                          className='w-full max-w-xs text-center text-sm flex justify-between items-center border border-dashed border-base-content p-2 rounded-md'
                         >
                           <input {...getInputProps()} />
                           {!values.picture ? (
                             <p>Add Picture Here</p>
                           ) : (
-                            <div>
+                            <div className='w-full flex justify-between items-center'>
                               <p>{values.picture.name}</p>
                               <EditOutlinedIcon />
                             </div>
@@ -184,7 +192,7 @@ const Form = () => {
             <input
               type="text"
               placeholder="Email"
-              className="input input-bordered w-full max-w-xs bg-inherit"
+              className="input input-bordered w-full max-w-xs "
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -193,7 +201,7 @@ const Form = () => {
             <input
               type="password"
               placeholder="Password"
-              className="input input-bordered w-full max-w-xs bg-inherit"
+              className="input input-bordered w-full max-w-xs "
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.password}
@@ -202,17 +210,18 @@ const Form = () => {
           </div>
 
           {/* Buttons */}
-          <div className='flex flex-col py-2'>
+          <div className='flex flex-col w-full'>
             <button
-              className="btn btn-wide w-full bg-inherit"
+              className="btn btn-primary w-full text-base "
               type='submit'
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              {isLogin ? "Login" : "Register"}
             </button>
 
-            <div className='divider m-0'></div>
+            <div className='divider m-0 my-2'></div>
 
             <p
+              className='cursor-pointer text-sm hover:text-primary transition-all'
               onClick={() => {
                 setPageType(isLogin ? "register" : "login");
                 resetForm();
