@@ -1,11 +1,8 @@
+/* eslint-disable react/prop-types */
 import {
   EditOutlined,
   DeleteOutlined,
-  AttachFileOutlined,
-  GifBoxOutlined,
   ImageOutlined,
-  MicOutlined,
-  MoreHorizOutlined,
 } from "@mui/icons-material";
 
 import Dropzone from "react-dropzone";
@@ -49,8 +46,8 @@ const MyPostWidget = ({ picturePath }) => {
   };
 
   return (
-    <div className="flex flex-col bg-pink-50 p-4 rounded-[33px] shadow-lg gap-4">
-      <div className="flex gap-4 w-full justify-start items-center">
+    <div className="">
+      <div className="">
         <UserImage image={picturePath} />
         <input
           type="text"
@@ -100,10 +97,10 @@ const MyPostWidget = ({ picturePath }) => {
       {/* Divider */}
       <div className="divider m-0"></div>
 
-      <div className="flex justify-between items-center">
+      <div className="">
         <div
           onClick={() => setIsImage(!isImage)}
-          className="flex justify-center items-start gap-2 cursor-pointer"
+          className="cursor-pointer"
         >
           <ImageOutlined />
           <p>
@@ -114,7 +111,7 @@ const MyPostWidget = ({ picturePath }) => {
         {/* Is Non Moblie Screens */}
 
         <button
-          className="btn rounded-[33px] text-white"
+          className="btn "
           onClick={handlePost}
           disabled={!post}
         >

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from 'formik';
@@ -112,8 +113,8 @@ const Form = () => {
         setFieldValue,
         resetForm,
       }) => (
-        <form onSubmit={handleSubmit} className='flex flex-col p-4 bg-pink-50 rounded-[33px] shadow-lg w-fit'>
-          <div className='flex flex-col gap-2'>
+        <form onSubmit={handleSubmit} className=''>
+          <div className=''>
             {
               isRegister && (
                 <>

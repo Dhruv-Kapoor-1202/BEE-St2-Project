@@ -12,7 +12,7 @@
 // } from "@mui/icons-material";
 
 import { useDispatch, useSelector } from "react-redux"
-import { setMode, setLogout } from "../../state/index.js";
+import { setLogout } from "../../state/index.js";
 import { useNavigate } from "react-router-dom"
 
 import UserImage from "../../components/UserImage.jsx";
@@ -26,9 +26,9 @@ const Navbar = () => {
   const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
-    <div className="navbar bg-pink-50 rounded-[33px] shadow-lg">
+    <div className="navbar">
       <div className="flex-1" onClick={() => navigate("/home")}>
-        <a className="btn btn-ghost text-xl rounded-[33px]">My App</a>
+        <a className="btn btn-ghost text-xl">My App</a>
       </div>
 
 

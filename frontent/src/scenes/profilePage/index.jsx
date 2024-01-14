@@ -33,17 +33,17 @@ const ProfilePage = () => {
 
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="bg-pink-100 rounded-[33px] p-2">
+    <div className="">
+      <div className="">
         <Navbar />
       </div>
-      <div className="flex gap-2 justify-between">
-        <div className="flex  flex-col  bg-pink-100 rounded-[33px] p-2 gap-2 flex-grow-[4]">
+      <div className="">
+        <div className="">
           <UserWidget userId={userId} picturePath={user.picturePath} />
           <FriendListWidget userId={userId} />
         </div>
 
-        <div className="flex  flex-col  bg-pink-100 rounded-[33px] p-2 gap-2 flex-grow-[4]">
+        <div className="">
           <MyPostWidget picturePath={user.picturePath} />
           <PostsWidget userId={userId} isProfile />
         </div>

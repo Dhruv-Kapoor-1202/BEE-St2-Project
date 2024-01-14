@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   ChatBubbleOutlineOutlined,
   FavoriteBorderOutlined,
@@ -42,7 +43,7 @@ const PostWidget = ({
   };
 
   return (
-    <div className="flex flex-col bg-pink-50 p-4 rounded-[33px] shadow-lg gap-2">
+    <div className="">
       <Friend
         friendId={postUserId}
         name={name}
@@ -61,9 +62,9 @@ const PostWidget = ({
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
-      <div className="flex justify-between items-center gap-4">
-        <div className="flex justify-start items-center gap-6">
-          <div className="flex justify-start items-center gap-1">
+      <div className="">
+        <div className="">
+          <div className="">
             <button
               type="submit"
               className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"
@@ -78,7 +79,7 @@ const PostWidget = ({
             <p>{likeCount}</p>
           </div>
 
-          <div className="flex justify-start items-center gap-1">
+          <div className="">
             <button
               type="submit"
               className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"

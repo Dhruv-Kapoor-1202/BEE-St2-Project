@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   ManageAccountsOutlined,
   EditOutlined,
@@ -47,15 +48,15 @@ const UserWidget = ({ userId, picturePath }) => {
   } = user;
 
   return (
-    <div className="bg-pink-50 rounded-[33px] p-4 pb-6 flex flex-col shadow-lg gap-2">
+    <div className="">
       {/* First Row */}
       <div
         onClick={() => navigate(`/profile/${userId}`)}
-        className="flex justify-between items-center cursor-pointer gap-2"
+        className=""
       >
-        <div className="flex justify-between items-center gap-4 ">
+        <div className="">
           <UserImage image={picturePath} />
-          <div className="flex flex-col justify-center items-start">
+          <div className="">
             <p className="text-xl font-bold">
               {firstName} {lastName}
             </p>
@@ -72,11 +73,11 @@ const UserWidget = ({ userId, picturePath }) => {
 
       {/* Second Row */}
       <div>
-        <div className="flex gap-4 justify-start items-center">
+        <div className="">
           <LocationOnOutlined fontSize="large" />
           <p>{location}</p>
         </div>
-        <div className="flex gap-4 justify-start items-center">
+        <div className="">
           <WorkOutlineOutlined fontSize="large" />
           <p>{occupation}</p>
         </div>
@@ -87,11 +88,11 @@ const UserWidget = ({ userId, picturePath }) => {
 
       {/* Third Row */}
       <div>
-        <div className="flex justify-between items-baseline gap-2" >
-          <p>Who's viewed your profile</p>
+        <div className="" >
+          <p>Who&apos;s viewed your profile</p>
           <p className="font-bold">{viewedProfile}</p>
         </div>
-        <div className="flex justify-between items-baseline gap-2" >
+        <div className="" >
           <p>Impressions of your post</p>
           <p className="font-bold">{impressions}</p>
         </div>
@@ -101,15 +102,15 @@ const UserWidget = ({ userId, picturePath }) => {
       <div className="divider m-0"></div>
 
       {/* Fourth Row */}
-      <div className="flex flex-col gap-2">
+      <div className="">
         <p className="font-bold text-lg">
           Social Profiles
         </p>
 
-        <div className="flex justify-between items-center">
-          <div className="flex justify-start gap-4">
+        <div className="">
+          <div className="">
             <img src="../assets/twitter.png" alt="twitter" />
-            <div className="flex flex-col items-start justify-center">
+            <div className="">
               <p className="font-semibold text-md">Twitter</p>
               <p className="text-sm">Social Network</p>
             </div>
@@ -117,10 +118,10 @@ const UserWidget = ({ userId, picturePath }) => {
           <EditOutlined />
         </div>
 
-        <div className="flex justify-between items-center">
-          <div className="flex justify-start gap-4">
+        <div className="">
+          <div className="">
             <img src="../assets/linkedin.png" alt="linkedin" />
-            <div className="flex flex-col items-start justify-center">
+            <div className="">
               <p className="font-semibold text-md">LinkedIn</p>
               <p className="text-sm">Network Platform</p>
             </div>

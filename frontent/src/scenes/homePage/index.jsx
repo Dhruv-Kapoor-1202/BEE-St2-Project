@@ -11,19 +11,19 @@ const HomePage = () => {
   const { _id, picturePath } = useSelector((state) => state.user);
 
   return (
-    <div className="flex flex-col gap-2 flex-grow-[1] ">
-      <div className="bg-pink-100 rounded-[33px] p-2">
+    <div className="">
+      <div className="">
         <Navbar />
       </div>
-      <div className="md:flex gap-2">
-        <div className="flex flex-col flex-1 bg-pink-100 rounded-[33px] p-2 gap-2">
+      <div className="">
+        <div className="">
           <UserWidget userId={_id} picturePath={picturePath} />
         </div>
-        <div className="flex flex-col flex-1 bg-pink-100 rounded-[33px] p-2 gap-2">
+        <div className="">
           <MyPostWidget picturePath={picturePath} />
           <PostsWidget userId={_id} />
         </div>
-        <div className="flex flex-col flex-1 bg-pink-100 rounded-[33px] p-2 gap-2">
+        <div className="">
           <FriendListWidget userId={_id} />
         </div>
       </div>

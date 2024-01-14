@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Friend from "../../components/Friend.jsx";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +27,7 @@ const FriendListWidget = ({ userId }) => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 p-4 bg-pink-50 rounded-[33px] shadow-lg">
+    <div className="W">
       <p className="font-bold text-lg">
         Friend List
       </p>
