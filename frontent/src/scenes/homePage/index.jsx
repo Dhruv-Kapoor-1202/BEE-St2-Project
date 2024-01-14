@@ -11,7 +11,7 @@ const HomePage = () => {
   const { _id, picturePath } = useSelector((state) => state.user);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 flex-grow-[1] ">
       <div className="bg-pink-100 rounded-[33px] p-2">
         <Navbar />
       </div>

@@ -55,7 +55,7 @@ const Form = () => {
     }
     formData.append("picturePath", values.picture.name);
 
-    const savedUserResponse = await fetch("https://localhost:3001/auth/register", {
+    const savedUserResponse = await fetch("http://localhost:3001/auth/register", {
       method: "POST",
       body: formData,
     });
@@ -112,15 +112,15 @@ const Form = () => {
         setFieldValue,
         resetForm,
       }) => (
-        <form onSubmit={handleSubmit} className='flex flex-col p-4 bg-pink-50 rounded-[33px]'>
-          <div>
+        <form onSubmit={handleSubmit} className='flex flex-col p-4 bg-pink-50 rounded-[33px] shadow-lg w-fit'>
+          <div className='flex flex-col gap-2'>
             {
               isRegister && (
                 <>
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="input input-bordered w-full max-w-xs"
+                    className="input input-bordered w-full max-w-xs bg-inherit"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.firstName}
@@ -129,7 +129,7 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="input input-bordered w-full max-w-xs"
+                    className="input input-bordered w-full max-w-xs bg-inherit"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.lastName}
@@ -138,7 +138,7 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Location"
-                    className="input input-bordered w-full max-w-xs"
+                    className="input input-bordered w-full max-w-xs bg-inherit"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.location}
@@ -147,7 +147,7 @@ const Form = () => {
                   <input
                     type="text"
                     placeholder="Occupation"
-                    className="input input-bordered w-full max-w-xs"
+                    className="input input-bordered w-full max-w-xs bg-inherit"
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.occupation}
@@ -183,7 +183,7 @@ const Form = () => {
             <input
               type="text"
               placeholder="Email"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs bg-inherit"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -192,7 +192,7 @@ const Form = () => {
             <input
               type="password"
               placeholder="Password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs bg-inherit"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.password}
@@ -201,13 +201,15 @@ const Form = () => {
           </div>
 
           {/* Buttons */}
-          <div>
+          <div className='flex flex-col py-2'>
             <button
-              className="btn btn-wide"
+              className="btn btn-wide w-full bg-inherit"
               type='submit'
             >
               {isLogin ? "LOGIN" : "REGISTER"}
             </button>
+
+            <div className='divider m-0'></div>
 
             <p
               onClick={() => {

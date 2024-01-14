@@ -9,8 +9,8 @@ const App = () => {
   const isAuth = Boolean(useSelector((state) => state.token));
 
   return (
-    <div className="app bg-pink-400 p-2">
-      <div className=" bg-pink-300 p-2 rounded-[33px] shadow-lg">
+    <div className="app bg-pink-400 p-2 flex flex-col h-[100vh]">
+      <div className=" bg-pink-300 p-2 rounded-[33px] shadow-lg flex flex-col h-[100%] w-[100%]">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LoginPage />} />
