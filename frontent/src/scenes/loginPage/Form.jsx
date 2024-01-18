@@ -161,7 +161,7 @@ const Form = () => {
                     value={values.occupation}
                     name='occupation'
                   />
-                  <div className='w-full input input-bordered flex p-2 flex'>
+                  <div className='w-full input input-bordered flex p-2'>
                     <Dropzone
                       acceptedFiles=".jpg,.jpeg,.png"
                       multiple={false}

@@ -43,14 +43,14 @@ const PostWidget = ({
   };
 
   return (
-    <div className="">
+    <div className="bg-base-200 rounded-lg p-4 flex flex-col gap-2">
       <Friend
         friendId={postUserId}
         name={name}
         subtitle={location}
         userPathPicture={userPicturePath}
       />
-      <p>
+      <p className=" flex justify-start items-center flex-wrap w-full line-clamp-1" >
         {description}
       </p>
       {picturePath && (
@@ -58,13 +58,16 @@ const PostWidget = ({
           width="100%"
           height="auto"
           alt="post"
-          style={{ borderRadius: "33px", marginTop: "0.75rem" }}
+          // className="aspect-[16/9]"
+          // className="object-cover h-64 w-full"
+          className=" w-full"
+          style={{ borderRadius: "", marginTop: "0" }}
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
-      <div className="">
-        <div className="">
-          <div className="">
+      <div className=" flex justify-between">
+        <div className="flex justify-start gap-2">
+          <div className="flex justify-start items-center gap-1">
             <button
               type="submit"
               className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"
@@ -79,7 +82,7 @@ const PostWidget = ({
             <p>{likeCount}</p>
           </div>
 
-          <div className="">
+          <div className="flex justify-start items-center gap-1">
             <button
               type="submit"
               className="hover:bg-slate-200 p-2 rounded-[50%] active:bg-slate-300"

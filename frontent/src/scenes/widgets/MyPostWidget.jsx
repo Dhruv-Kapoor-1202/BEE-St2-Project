@@ -46,9 +46,9 @@ const MyPostWidget = ({ picturePath }) => {
   };
 
   return (
-    <div className="">
-      <div className="">
-        <UserImage image={picturePath} />
+    <div className="bg-base-200 rounded-lg p-4 flex flex-col p-2 gap-2">
+      <div className="flex gap-2 justify-start items-center">
+        <UserImage image={picturePath} classSize={`w-12 h-12 rounded-full`} />
         <input
           type="text"
           placeholder="What's on your mind..."
@@ -58,23 +58,28 @@ const MyPostWidget = ({ picturePath }) => {
         />
       </div>
       {isImage && (
-        <div>
+        <div className=" cursor-pointer input input-bordered input-lg w-full h-full flex p-2">
           <Dropzone
             acceptedFiles=".jpg,.jpeg,.png"
             multiple={false}
             onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}
           >
             {({ getRootProps, getInputProps }) => (
-              <div>
+              <div className="w-full text-center text-sm flex justify-between items-center rounded-md gap-2">
                 <div
                   {...getRootProps()}
+                  className="w-full text-center flex justify-between items-center border border-dashed border-base-content p-2 rounded-md "
                 >
-                  <input {...getInputProps()} />
+                  <input {...getInputProps()}
+                    className="cursor-pointer"
+                  />
                   {!image ? (
                     <p>Add Image Here</p>
                   ) : (
-                    <div>
-                      <p>{image.name}</p>
+                    <div className="flex gap-2 justify-between items-center w-full" >
+                      <p
+                        className="line-clamp-1"
+                      >{image.name}</p>
                       <EditOutlined />
                     </div>
                   )}
@@ -95,12 +100,12 @@ const MyPostWidget = ({ picturePath }) => {
       )}
 
       {/* Divider */}
-      <div className="divider m-0"></div>
+      <div className="divider m-0 "></div>
 
-      <div className="">
+      <div className=" flex justify-between items-center flex-col sm:flex-row">
         <div
           onClick={() => setIsImage(!isImage)}
-          className="cursor-pointer"
+          className="btn cursor-pointer flex w-full sm:w-fit"
         >
           <ImageOutlined />
           <p>
@@ -111,7 +116,7 @@ const MyPostWidget = ({ picturePath }) => {
         {/* Is Non Moblie Screens */}
 
         <button
-          className="btn "
+          className="btn btn-primary w-full sm:w-fit"
           onClick={handlePost}
           disabled={!post}
         >

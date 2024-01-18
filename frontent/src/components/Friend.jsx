@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -27,9 +28,9 @@ const Friend = ({ friendId, name, subtitle, userPathPicture }) => {
   };
 
   return (
-    <div className="flex justify-between items-center gap-4 ">
-      <div className="flex justify-start items-center gap-4">
-        <UserImage image={userPathPicture} size="55px" />
+    <div className="flex justify-between items-center gap-4 p-2">
+      <div className="flex justify-start items-center gap-4 " >
+        <UserImage image={userPathPicture} classSize={`w-12 h-12 rounded-full`} size="55px" />
         <div
           onClick={() => {
             navigate(`/profile/${friendId}`);
@@ -37,27 +38,29 @@ const Friend = ({ friendId, name, subtitle, userPathPicture }) => {
           }}
           className="flex flex-col gap-0"
         >
-          <p className="font-bold">
+          <p className="text-lg font-bold leading-[22px] line-clamp-1">
             {name}
           </p>
-          <p className="text-sm">
+          <p className="text-sm line-clamp-1">
             {subtitle}
           </p>
         </div>
-      </div>
+      </div >
+
 
       <button
         type="submit"
-        className="btn rounded-[50%] h-fit w-fit hover:bg-inherit"
+        className="btn rounded-full"
         onClick={() => patchFriend()}
       >
         {isFriend ? (
-          <PersonRemoveOutlined sx={{ fontSize: "1.25rem", p: 0 }} />
+          <PersonRemoveOutlined sx={{ fontSize: "1rem", p: 0 }} />
         ) : (
-          <PersonAddOutlined sx={{ fontSize: "1.25rem" }} />
+          <PersonAddOutlined sx={{ fontSize: "1rem", p: 0 }} />
         )}
       </button>
-    </div>
+
+    </div >
   );
 };
 

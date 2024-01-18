@@ -33,20 +33,19 @@ const ProfilePage = () => {
 
 
   return (
-    <div className="">
-      <div className="">
+
+    <div className="sm:flex h-[100vh] w-[100%] overflow-auto no-scrollbar">
+      <div className="flex p-2">
         <Navbar />
       </div>
-      <div className="">
-        <div className="">
-          <UserWidget userId={userId} picturePath={user.picturePath} />
-          <FriendListWidget userId={userId} />
-        </div>
+      <div className="flex flex-col gap-2 p-2 md:block overflow-auto no-scrollbar grow w-[30%]">
+        <UserWidget userId={userId} picturePath={user.picturePath} />
+        <FriendListWidget userId={userId} />
+      </div>
 
-        <div className="">
-          <MyPostWidget picturePath={user.picturePath} />
-          <PostsWidget userId={userId} isProfile />
-        </div>
+      <div className="overflow-auto no-scrollbar grow flex flex-col p-2 gap-2 sm:w-[60%]">
+        <MyPostWidget picturePath={user.picturePath} />
+        <PostsWidget userId={userId} isProfile />
       </div>
     </div>
   )

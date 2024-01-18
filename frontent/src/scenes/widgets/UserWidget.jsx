@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
-  ManageAccountsOutlined,
+  // ManageAccountsOutlined,
   EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
@@ -42,52 +42,52 @@ const UserWidget = ({ userId, picturePath }) => {
     lastName,
     location,
     occupation,
-    viewedProfile,
-    impressions,
+    // viewedProfile,
+    // impressions,
     friends,
   } = user;
 
   return (
-    <div className="">
+    <div className="bg-base-200 p-2 pb-6 flex flex-col rounded-lg">
       {/* First Row */}
       <div
         onClick={() => navigate(`/profile/${userId}`)}
         className=""
       >
-        <div className="">
-          <UserImage image={picturePath} />
-          <div className="">
-            <p className="text-xl font-bold">
+        <div className="flex flex-col justify-center items-center text-center pt-6 p-4 gap-4">
+          <UserImage image={picturePath} classSize={"w-20"} />
+          <div className="flex flex-col justify-center items-center gap-1">
+            <p className="text-2xl font-bold  leading-6">
               {firstName} {lastName}
             </p>
-            <p>
+            <p className="text-sm">
               {friends.length} {friends.length === 1 ? "friend" : "friends"}
             </p>
           </div>
         </div>
-        <ManageAccountsOutlined />
+        {/* <ManageAccountsOutlined /> */}
       </div>
 
       {/* Divider */}
       <div className="divider m-0"></div>
 
       {/* Second Row */}
-      <div>
-        <div className="">
-          <LocationOnOutlined fontSize="large" />
-          <p>{location}</p>
+      <div className="flex w-full gap-2">
+        <div className="flex flex-col w-full justify-center items-center p-2 bg-base-300 rounded-lg">
+          <LocationOnOutlined fontSize="small" />
+          <p className="text-[0.75rem]">{location}</p>
         </div>
-        <div className="">
-          <WorkOutlineOutlined fontSize="large" />
-          <p>{occupation}</p>
+        <div className="flex flex-col w-full justify-center items-center p-2 bg-base-300 rounded-lg">
+          <WorkOutlineOutlined fontSize="small" />
+          <p className="text-[0.75rem]">{occupation}</p>
         </div>
       </div>
 
       {/* Divider */}
-      <div className="divider m-0"></div>
+      {/* <div className="divider m-0"></div> */}
 
       {/* Third Row */}
-      <div>
+      {/* <div>
         <div className="" >
           <p>Who&apos;s viewed your profile</p>
           <p className="font-bold">{viewedProfile}</p>
@@ -96,34 +96,34 @@ const UserWidget = ({ userId, picturePath }) => {
           <p>Impressions of your post</p>
           <p className="font-bold">{impressions}</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Divider */}
       <div className="divider m-0"></div>
 
       {/* Fourth Row */}
-      <div className="">
+      <div className="flex flex-col gap-2 p-2">
         <p className="font-bold text-lg">
           Social Profiles
         </p>
 
-        <div className="">
-          <div className="">
-            <img src="../assets/twitter.png" alt="twitter" />
-            <div className="">
-              <p className="font-semibold text-md">Twitter</p>
-              <p className="text-sm">Social Network</p>
+        <div className=" flex justify-between items-center">
+          <div className=" flex justify-start gap-2 items-center">
+            <img src="../assets/twitter.png" alt="twitter" className="w-7 h-7" />
+            <div className="flex flex-col gap-0 ">
+              <p className="font-semibold text-md leading-5">Twitter</p>
+              <p className="text-[0.75rem] leading-[1rem] line-clamp-1">Social Network</p>
             </div>
           </div>
           <EditOutlined />
         </div>
 
-        <div className="">
-          <div className="">
-            <img src="../assets/linkedin.png" alt="linkedin" />
-            <div className="">
-              <p className="font-semibold text-md">LinkedIn</p>
-              <p className="text-sm">Network Platform</p>
+        <div className=" flex justify-between items-center">
+          <div className="flex justify-start gap-2 items-center">
+            <img src="../assets/linkedin.png" alt="linkedin" className="w-7 h-7" />
+            <div className="flex flex-col gap-0 ">
+              <p className="font-semibold text-md leading-5">LinkedIn</p>
+              <p className="text-[0.75rem] leading-[1rem] line-clamp-1">Network Platform</p>
             </div>
           </div>
           <EditOutlined />

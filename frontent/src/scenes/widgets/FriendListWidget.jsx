@@ -27,11 +27,11 @@ const FriendListWidget = ({ userId }) => {
   }, []);
 
   return (
-    <div className="W">
-      <p className="font-bold text-lg">
+    <div className="p-2 flex flex-col gap-2 bg-base-200 rounded-lg">
+      <p className="font-bold text-2xl">
         Friend List
       </p>
-      <div>
+      <div className="flex flex-col gap-2 bg-base-300 rounded-lg">
         {friends.map((friend) => (
           <Friend
             key={friend._id}

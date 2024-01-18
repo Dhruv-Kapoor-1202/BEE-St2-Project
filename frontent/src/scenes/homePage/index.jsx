@@ -11,23 +11,23 @@ const HomePage = () => {
   const { _id, picturePath } = useSelector((state) => state.user);
 
   return (
-    <div className="">
-      <div className="">
+
+    <div className="sm:flex h-[100vh] w-[100%] overflow-auto no-scrollbar">
+      <div className="flex p-2">
         <Navbar />
       </div>
-      <div className="">
-        <div className="">
-          <UserWidget userId={_id} picturePath={picturePath} />
-        </div>
-        <div className="">
-          <MyPostWidget picturePath={picturePath} />
-          <PostsWidget userId={_id} />
-        </div>
-        <div className="">
-          <FriendListWidget userId={_id} />
-        </div>
+      <div className="hidden p-2 md:block overflow-auto no-scrollbar grow w-[30%]">
+        <UserWidget userId={_id} picturePath={picturePath} />
+      </div>
+      <div className="overflow-auto no-scrollbar grow flex flex-col p-2 gap-2 sm:w-[60%]">
+        <MyPostWidget picturePath={picturePath} />
+        <PostsWidget userId={_id} />
+      </div>
+      <div className="hidden p-2 sm:block overflow-auto no-scrollbar grow sm:w-[40%]">
+        <FriendListWidget userId={_id} />
       </div>
     </div>
+
   )
 }
 
